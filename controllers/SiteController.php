@@ -61,6 +61,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->view->registerMetaTag([
+            'name' => 'description',
+            'content' => 'Описание'
+        ]);
         return $this->render('index');
     }
 

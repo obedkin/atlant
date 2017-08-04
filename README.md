@@ -1,4 +1,4 @@
-Yii 2 Basic Project Template
+Atlant
 ============================
 
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
@@ -12,7 +12,7 @@ features to your application.
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
 
-DIRECTORY STRUCTURE
+Структура директорий
 -------------------
 
       assets/             contains assets definition
@@ -27,6 +27,20 @@ DIRECTORY STRUCTURE
       views/              contains view files for the Web application
       web/                contains the entry script and Web resources
 
+Настройка виртуальных хостов
+---------------------------------------
+    <VirtualHost *:80>
+        ServerName atlant
+        ServerAlias www.atlant
+        DocumentRoot /var/www/atlant/web
+        <Directory /var/www/atlant/web>
+                Options Indexes FollowSymlinks
+                AllowOverride All
+                Require all granted
+        </Directory>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
 
 
 REQUIREMENTS
