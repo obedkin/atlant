@@ -12,7 +12,15 @@ features to your application.
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
 
-Структура директорий
+Установка PHP 7.1
+--------------------------------------------
+Работает на PHP 7.0 и более. Пример установки всех необходимых компонентов для Ubuntu (17.04)
+
+    sudo apt-get install php7.1 php7.1-cli php7.1-common libapache2-mod-php7.1 php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 php7.1-mcrypt php7.1-json php7.1-tidy php7.1-mbstring php-redis php-memcached
+    sudo service apache2 restart
+    
+
+Структура директорий``````````
 -------------------
 
       assets/             contains assets definition
@@ -41,6 +49,8 @@ features to your application.
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
     </VirtualHost>
+
+
 
 
 REQUIREMENTS

@@ -9,6 +9,11 @@ $config = [
     'bootstrap' => ['log'],
     'layout' => 'index',
     'language' => 'ru',
+    'modules' => [
+        'news' => [
+            'class' => 'app\modules\news\Module',
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -46,6 +51,10 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<module:[\w\-]+>/<controller:[\w\-]+>' => '<module>/<controller>/index',
+                '<module:[\w\-]+>/<controller:[\w\-]+>/<id:\d+>' => '<module>/<controller>/view',
+                '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
+                '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>' => '<module>/<controller>/<action>',
             ],
         ],
 

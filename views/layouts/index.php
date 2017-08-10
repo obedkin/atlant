@@ -29,7 +29,9 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="page-container">
+
     <?= $this->render('blocks/sidebar'); ?>
+    <?=$content;?>
     <?= $this->render('blocks/content'); ?>
 </div>
 
