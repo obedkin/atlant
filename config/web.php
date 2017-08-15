@@ -8,7 +8,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'layout' => 'index',
-    'language' => 'ru',
+    'language' => 'ru-RU',
     'modules' => [
         'news' => [
             'class' => 'app\modules\news\Module',
@@ -42,6 +42,17 @@ $config = [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
+                ],
+            ],
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/news' => 'news.php',
+                    ],
                 ],
             ],
         ],

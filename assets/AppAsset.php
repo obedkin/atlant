@@ -34,13 +34,14 @@ class AppAsset extends AssetBundle
         'js/plugins/owl/owl.carousel.min.js',
         'js/plugins/moment.min.js',
         'js/plugins/daterangepicker/daterangepicker.js',
+        'js/settings.js',
         'js/plugins.js',
+        'js/actions.js',
         'js/demo_dashboard.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\jui\JuiAsset',
-        'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset'
     ];
 }
