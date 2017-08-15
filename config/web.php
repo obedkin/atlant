@@ -62,10 +62,21 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+
+                'signup' => 'site/signup',
+                'login' => 'site/login',
+                'logout' => 'site/logout',
+                'site/request-password-reset'=>'site/request-password-reset',
+
                 '<module:[\w\-]+>/<controller:[\w\-]+>' => '<module>/<controller>/index',
                 '<module:[\w\-]+>/<controller:[\w\-]+>/<id:\d+>' => '<module>/<controller>/view',
                 '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
                 '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>' => '<module>/<controller>/<action>',
+
+                '<controller:[\w\-]+>' => '<controller>/index',
+                '<controller:[\w\-]+>/<id:\d+>' => '<controller>/view',
+                '<controller:[\w\-]+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:[\w\-]+>/<action:\w+>' => '<controller>/<action>',
             ],
         ],
 
