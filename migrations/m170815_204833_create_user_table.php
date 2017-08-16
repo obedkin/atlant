@@ -11,27 +11,30 @@ class m170815_204833_create_user_table extends Migration
     public function up()
     {
         $tableOptions = null;
-
         if ($this->db->driverName === 'mysql') {
-            $tableOptions
-                = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('user', [
+        $this->createTable('{{%user}}', [
             'id' => $this->primaryKey(),
-            'username' => $this->string()->notNull()->unique(),
-            'auth_key' => $this->string(32)->notNull(),
-            'password_hash' => $this->string()->notNull(),
-            'password_reset_token' => $this->string()->unique(),
-            'email' => $this->string()->notNull()->unique(),
-            'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'username' => $this->string()->notNull(),
+            'auth_key' => $this->string(32),
+            'email_confirm_token' => $this->string(),
+            'password_hash' => $this->string()->notNull(),
+            'password_reset_token' => $this->string(),
+            'email' => $this->string()->notNull(),
+            'status' => $this->smallInteger()->notNull()->defaultValue(0),
         ], $tableOptions);
+
+        $this->createIndex('idx-user-username', '{{%user}}', 'username');
+        $this->createIndex('idx-user-email', '{{%user}}', 'email');
+        $this->createIndex('idx-user-status', '{{%user}}', 'status');
     }
 
     public function down()
     {
-        $this->dropTable('user');
+        $this->dropTable('{{%user}}');
     }
 }

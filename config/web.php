@@ -10,6 +10,9 @@ $config = [
     'layout' => 'index',
     'language' => 'ru-RU',
     'modules' => [
+        'user' => [
+            'class' => 'app\modules\user\Module',
+        ],
         'news' => [
             'class' => 'app\modules\news\Module',
         ],
@@ -23,19 +26,26 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\modules\user\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => ['user/default/login'],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
         ],
+
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'dateFormat' => 'php:d.m.Y',
+            'datetimeFormat' => 'php:d.m.Y H:i:s',
+            'timeFormat' => 'php:H:i:s',
+            'timeZone' => 'Europe/Moscow',
+        ],
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -63,6 +73,17 @@ $config = [
             'showScriptName' => false,
             'rules' => [
 
+
+                //'' => 'main/default/index',
+                //'contact' => 'main/contact/index',
+                //'<_a:error>' => 'main/default/<_a>',
+                '<_a:(login|logout|signup|email-confirm|request-password-reset|password-reset)>' => 'user/default/<_a>',
+                '<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/<_a>',
+                '<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/view',
+                '<_m:[\w\-]+>' => '<_m>/default/index',
+                '<_m:[\w\-]+>/<_c:[\w\-]+>' => '<_m>/<_c>/index',
+
+                /*
                 'signup' => 'site/signup',
                 'login' => 'site/login',
                 'logout' => 'site/logout',
@@ -71,7 +92,7 @@ $config = [
                 '<module:[\w\-]+>/<controller:[\w\-]+>' => '<module>/<controller>/index',
                 '<module:[\w\-]+>/<controller:[\w\-]+>/<id:\d+>' => '<module>/<controller>/view',
                 '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
-                '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>' => '<module>/<controller>/<action>',
+                '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>' => '<module>/<controller>/<action>',*/
 
                 '<controller:[\w\-]+>' => '<controller>/index',
                 '<controller:[\w\-]+>/<id:\d+>' => '<controller>/view',
