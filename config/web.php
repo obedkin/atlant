@@ -4,12 +4,12 @@ $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
 $config = [
-    'id' => 'atlatn',
+    'id' => 'atlant1',
     'defaultRoute' => 'main/default/index',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'layout' => 'index',
-    'language' => 'ru-RU',
+    'language' => 'en-EN',
     'modules' => [
 
         'main' => [

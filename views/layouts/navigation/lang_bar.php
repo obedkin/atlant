@@ -1,10 +1,6 @@
-<!-- LANG BAR -->
 <li class="xn-icon-button pull-right">
-    <a href="#"><span class="flag flag-gb"></span></a>
+    <a href="#"title="Russian"><span class="flag flag-ru"></span></a>
     <ul class="xn-drop-left xn-drop-white animated zoomIn">
-        <li><a href="#"><span class="flag flag-gb"></span> English</a></li>
-        <li><a href="#"><span class="flag flag-de"></span> Deutsch</a></li>
-        <li><a href="#"><span class="flag flag-cn"></span> Chinese</a></li>
+        <li><a href="#" title="English"><span class="flag flag-gb"></span> English</a></li>
     </ul>
 </li>
-<!-- END LANG BAR -->

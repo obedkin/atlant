@@ -1,6 +1,9 @@
 <?php
 
 return [
+
+    'SEARCH' => 'Search...',
+
     'TITLE_CONTACT' => 'Contact',
 
     'BUTTON_SEND' => 'Send',

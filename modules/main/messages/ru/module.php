@@ -1,6 +1,9 @@
 <?php
 
 return [
+
+    'SEARCH' => 'Поиск...',
+
     'TITLE_CONTACT' => 'Обратная связь',
 
     'BUTTON_SEND' => 'Отправить',

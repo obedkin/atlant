@@ -1,6 +1,5 @@
 <?php
 use yii\bootstrap\Nav;
-use yii\helpers\Html;
 
 echo Nav::widget([
     'options' => ['class' => 'x-navigation x-navigation-horizontal x-navigation-panel'],

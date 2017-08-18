@@ -3,7 +3,7 @@
 
 use app\components\widgets\StartWidget\StartWidget;
 
-$this->params['breadcrumbs'][] = Yii::t('app', 'Welcome');
+$this->params['breadcrumbs'][] = Yii::t('app', 'WELCOME');
 ?>
 
 <div class="row">

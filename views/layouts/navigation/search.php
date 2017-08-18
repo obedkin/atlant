@@ -1,7 +1,7 @@
-<!-- SEARCH -->
 <li class="xn-search">
     <form role="form">
-        <input type="text" name="search" placeholder="<?= Yii::t('app', 'Search...'); ?>"/>
+        <input type="text"
+               name="search"
+               placeholder="<?= Yii::t('app', 'SEARCH'); ?>"/>
     </form>
 </li>
-<!-- END SEARCH -->

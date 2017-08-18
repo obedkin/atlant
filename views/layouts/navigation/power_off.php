@@ -49,16 +49,3 @@
 
 </li>
 <!-- END POWER OFF -->
-
-<?= Html::a("Выход", 'site/logout', [
-        'data' => [
-            'method' => 'post'
-        ],
-        ['class' => 'white text-center']
-    ]
-);?>
-
-<?= Html::a("Выход", ['/site/logout'], [
-    'data' => ['method' => 'post'],
-    'class' => 'white text-center',
-]);?>

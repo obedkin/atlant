@@ -3,6 +3,17 @@
 return [
 
 
+    // Application -------------------------------------------------------------
+    'app' => [
+        'title' => 'Атлант',
+        'description' => 'Корпоративная система управления предприятием',
+        'version' => '1.0',
+        'email' => 'email@atlant.com',
+        'icon' => '<span class="fa fa-dashboard"></span>',
+        'image' => 'img/atlant/atlant.png'
+    ],
+
+
     'adminEmail' => 'atlant@gmail.com',
     'supportEmail' => 'atlant@gmail.com',
     'user.passwordResetTokenExpire' => 3600,
