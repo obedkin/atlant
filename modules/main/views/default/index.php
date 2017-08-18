@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Welcome');
         'subTitle' => Yii::t('app/news', 'События в России и мире'),
     ]) ?>
 </div>
-}
+
 <!-- START WIDGETS -->
 <div class="row">
     <div class="col-md-3">

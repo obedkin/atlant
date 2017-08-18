@@ -4,12 +4,17 @@ $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
 $config = [
-    'id' => 'basic',
+    'id' => 'atlatn',
+    'defaultRoute' => 'main/default/index',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'layout' => 'index',
     'language' => 'ru-RU',
     'modules' => [
+
+        'main' => [
+            'class' => 'app\modules\main\Module',
+        ],
         'user' => [
             'class' => 'app\modules\user\Module',
         ],
@@ -31,7 +36,7 @@ $config = [
             'loginUrl' => ['user/default/login'],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'main/default/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -72,32 +77,15 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-
-
-                //'' => 'main/default/index',
-                //'contact' => 'main/contact/index',
-                //'<_a:error>' => 'main/default/<_a>',
-                '<_a:(login|logout|signup|email-confirm|request-password-reset|password-reset)>' => 'user/default/<_a>',
-                '<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/<_a>',
-                '<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/view',
+                '' => 'main/default/index',
+                'contact' => 'main/contact/index',
+                '<_a:error>' => 'main/default/<_a>',
+                '<_a:(login|logout|signup|email-confirm|password-reset-request|password-reset)>' => 'user/default/<_a>',
                 '<_m:[\w\-]+>' => '<_m>/default/index',
                 '<_m:[\w\-]+>/<_c:[\w\-]+>' => '<_m>/<_c>/index',
-
-                /*
-                'signup' => 'site/signup',
-                'login' => 'site/login',
-                'logout' => 'site/logout',
-                'site/request-password-reset'=>'site/request-password-reset',
-
-                '<module:[\w\-]+>/<controller:[\w\-]+>' => '<module>/<controller>/index',
-                '<module:[\w\-]+>/<controller:[\w\-]+>/<id:\d+>' => '<module>/<controller>/view',
-                '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
-                '<module:[\w\-]+>/<controller:[\w\-]+>/<action:\w+>' => '<module>/<controller>/<action>',*/
-
-                '<controller:[\w\-]+>' => '<controller>/index',
-                '<controller:[\w\-]+>/<id:\d+>' => '<controller>/view',
-                '<controller:[\w\-]+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:[\w\-]+>/<action:\w+>' => '<controller>/<action>',
+                '<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w-]+>' => '<_m>/<_c>/<_a>',
+                '<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/view',
+                '<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>/<_a:[\w\-]+>' => '<_m>/<_c>/<_a>',
             ],
         ],
 

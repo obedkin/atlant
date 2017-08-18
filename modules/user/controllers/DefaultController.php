@@ -36,12 +36,14 @@ class DefaultController extends Controller
                     ],
                 ],
             ],
-            'verbs' => [
+
+            // TODO: Logout пока тоже делаем через GET-запроса, т.к. не получается в шаблоне JS отключить работу скриптов без ущерба шаблону
+            /*'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
                 ],
-            ],
+            ],*/
         ];
     }
 
