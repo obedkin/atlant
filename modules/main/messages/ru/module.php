@@ -2,7 +2,7 @@
 
 return [
 
-    'SEARCH' => 'Поиск...',
+    'SEARCH' => 'Поиск1...',
 
     'TITLE_CONTACT' => 'Обратная связь',
 

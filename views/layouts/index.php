@@ -5,7 +5,6 @@
 /* @var $content string */
 
 
-use app\components\widgets\AlertWidget\AlertWidget;
 use yii\helpers\Html;
 use app\assets\AppAsset;
 
@@ -32,9 +31,19 @@ AppAsset::register($this);
         <div class="page-content">
             <?= $this->render('blocks/navigation'); ?>
             <?= $this->render('blocks/breadcrumb'); ?>
-            <?= AlertWidget::widget() ?>
+            <?= $this->render('blocks/alert'); ?>
+            <?= $this->render('blocks/title'); ?>
+
             <div class="page-content-wrap">
-                <?= $content; ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <?= $content; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

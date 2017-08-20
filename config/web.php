@@ -4,12 +4,16 @@ $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
 $config = [
-    'id' => 'atlant1',
+    'id' => 'atlant',
     'defaultRoute' => 'main/default/index',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'app\modules\main\Bootstrap',
+        'app\modules\user\Bootstrap',
+    ],
     'layout' => 'index',
-    'language' => 'en-EN',
+    'language' => 'ru-RU',
     'modules' => [
 
         'main' => [
@@ -17,6 +21,7 @@ $config = [
         ],
         'user' => [
             'class' => 'app\modules\user\Module',
+
         ],
         'news' => [
             'class' => 'app\modules\news\Module',

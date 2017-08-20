@@ -1,6 +1,5 @@
 <?php
 namespace app\modules\user\models;
-use app\modules\user\models\UserQuery;
 use app\modules\user\Module;
 use Yii;
 use yii\base\NotSupportedException;
@@ -28,6 +27,18 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_BLOCKED = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_WAIT = 2;
+
+    const SCENARIO_PROFILE = 'profile';
+
+
+    public function scenarios()
+    {
+        return [
+            self::SCENARIO_DEFAULT => ['username', 'email', 'status'],
+            self::SCENARIO_PROFILE => ['email'],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -61,12 +72,15 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'in', 'range' => array_keys(self::getStatusesArray())],
             ['role', 'string', 'max' => 64],
         ];
+
+
     }
     /**
      * @inheritdoc
      */
     public function attributeLabels()
     {
+
         return [
             'id' => 'ID',
             'created_at' => Module::t('module', 'USER_CREATED'),

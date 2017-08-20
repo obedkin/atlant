@@ -6,6 +6,8 @@ return [
 
     'ATLANT' => 'Atlant',
     'SEARCH' => 'Search...',
-    'WELCOME'=>'Welcome'
+    'WELCOME'=>'Welcome',
+
+    'NAV_PROFILE' => 'Profile'
 
 ];

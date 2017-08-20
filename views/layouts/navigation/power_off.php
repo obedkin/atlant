@@ -22,6 +22,12 @@
                 'visible' => Yii::$app->user->isGuest,
             ],
             [
+                'label' => Yii::$app->params['general']['login_icon'] . ' '
+                    .  Yii::t('app', 'NAV_PROFILE'),
+                'url' => ['/user/profile/index'],
+                'visible' => !Yii::$app->user->isGuest,
+            ],
+            [
                 'label' => Yii::$app->params['general']['logout_icon'] . ' '
                     . Yii::t('app', 'Logout'),
                 'url' => ['/logout'],
