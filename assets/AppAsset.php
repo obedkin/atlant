@@ -18,7 +18,10 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/theme-default.css'
+        'css/theme-default.css',
+        'css/site.css',
+        'css/style.css'
+
     ];
     public $js = [
         'js/plugins/icheck/icheck.min.js',
@@ -37,7 +40,7 @@ class AppAsset extends AssetBundle
         'js/settings.js',
         'js/plugins.js',
         'js/actions.js',
-        'js/demo_dashboard.js'
+        //'js/demo_dashboard.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
